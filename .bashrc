@@ -141,3 +141,4 @@ fi
 #source /home/metras9/interbotix_ws/install/setup.bash
 #export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export TURTLEBOT3_MODEL=burger
+alias vim=nvim
