@@ -116,6 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+tmux
+
 # Interbotix Configurations
 #source /opt/ros/humble/setup.bash
 #source /home/metras9/apriltag_ws/install/setup.bash
