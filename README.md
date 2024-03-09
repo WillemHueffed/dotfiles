@@ -29,12 +29,3 @@ then use GNU stow to create symlinks
 ```
 $ stow .
 ```
-
-## NVChad Setup
-apt package is outdated (V 4.* while NVChad needs V 0.9.5)
-```
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
-sudo mv nvim.appimage /usr/bin
-```
