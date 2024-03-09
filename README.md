@@ -33,7 +33,8 @@ $ stow .
 ## NVChad Setup
 apt package is outdated (V 4.* while NVChad needs V 0.9.5)
 ```
-wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-./nvim-linux64/bin/nvim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+sudo mv nvim.appimage /usr/bin
 ```
