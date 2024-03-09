@@ -5,6 +5,7 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+  --[[
   {
     "zbirenbaum/copilot.lua",
     lazy = false,
@@ -15,6 +16,7 @@ local plugins = {
       require("copilot").setup(opts)
     end
   },
+  --]]
   {
     "anuvyklack/pretty-fold.nvim",
     lazy = false,
