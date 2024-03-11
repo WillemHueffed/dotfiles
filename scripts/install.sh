@@ -16,3 +16,7 @@ sudo mv nvim.appimage /usr/bin
 
 # Install NvChad
 git clone -b v2.0 https://github.com/NvChad/NvChad ~/dotfiles/.config/nvim --depth 1 && nvim
+
+# Install Node.js v21.x
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
