@@ -1,14 +1,5 @@
 local M = {}
 
-M.general = {
-  n = {
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
-  }
-}
-
 M.dap = {
   plugin = true,
   n = {
@@ -20,24 +11,6 @@ M.dap = {
         sidebar.open();
       end,
       "Open debugging sidebar"
-    }
-  }
-}
-
-M.dap_go = {
-  plugin = true,
-  n = {
-    ["<leader>dgr"] = {
-      function()
-        require('dap-go').debug_test()
-      end,
-      "Debug go test"
-    },
-    ["<leader>dgl"] = {
-      function()
-        require('dap-go').debug_last()
-      end,
-      "Debug last go test"
     }
   }
 }

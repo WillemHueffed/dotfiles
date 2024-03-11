@@ -2,35 +2,10 @@ local cmp = require "cmp"
 
 local plugins = {
   {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-  },
-  --[[
-  {
-    "zbirenbaum/copilot.lua",
-    lazy = false,
-    opts = function ()
-      return require "custom.configs.copilot"
-    end,
-    config = function(_, opts)
-      require("copilot").setup(opts)
-    end
-  },
-  --]]
-  {
-    "anuvyklack/pretty-fold.nvim",
-    lazy = false,
-    config = function()
-      require("pretty-fold").setup()
-    end
-  },
-  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "gopls",
         "rust-analyzer",
-        "python-lsp-server",
       },
     },
   },
@@ -42,22 +17,13 @@ local plugins = {
     end,
   },
   {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
+    "mrcjkb/rustaceanvim",
+    version = "^4",
+    ft = { "rust" },
     dependencies = "neovim/nvim-lspconfig",
-    opts = function ()
-      return require "custom.configs.rust-tools"
-    end,
-    config = function(_, opts)
-      require('rust-tools').setup(opts)
+    config = function()
+      require "custom.configs.rustaceanvim"
     end
-  },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
-    opts = function()
-      return require "custom.configs.null-ls"
-    end,
   },
   {
     "mfussenegger/nvim-dap",
@@ -66,27 +32,8 @@ local plugins = {
     end
   },
   {
-    "leoluz/nvim-dap-go",
-    ft = "go",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function(_, opts)
-      require("dap-go").setup(opts)
-      require("core.utils").load_mappings("dap_go")
-    end
-  },
-  {
-    "olexsmir/gopher.nvim",
-    ft = "go",
-    config = function(_, opts)
-      require("gopher").setup(opts)
-    end,
-    build = function()
-      vim.cmd [[silent! GoInstallDeps]]
-    end,
-  },
-  {
     'saecki/crates.nvim',
-    ft = {"rust", "toml"},
+    ft = {"toml"},
     config = function(_, opts)
       local crates  = require('crates')
       crates.setup(opts)
@@ -120,18 +67,9 @@ local plugins = {
         behavior = cmp.ConfirmBehavior.Insert,
         select = false,
       }
-
-      M.mapping["<C-j>"] = cmp.mapping(function(_fallback)
-        cmp.mapping.abort()
-        require("copilot.suggestion").accept_line()
-      end, {
-          "i",
-          "s",
-        })
-
       table.insert(M.sources, {name = "crates"})
       return M
     end,
-  },
+  }
 }
 return plugins
