@@ -16,7 +16,20 @@ sudo apt install git
 sudo apt install stow
 ```
 
-# Installation
+### NVChad Mason Requirements
+
+#### Python Venv
+```
+"sudo apt install python3-venv
+```
+
+### Node JS
+```
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+## Installation
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
