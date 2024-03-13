@@ -5,6 +5,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        --rust
         "rust-analyzer",
         -- Below is all Python
         "debugpy",
@@ -12,6 +13,10 @@ local plugins = {
         "ruff-lsp",
         "black",
         "pyright",
+        --c++
+        "clangd",
+        "clang-format",
+        "codelldb",
       },
     },
   },
