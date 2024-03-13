@@ -126,7 +126,8 @@ local plugins = {
   },
   {
     "nvimtools/none-ls.nvim",
-    ft = {"python"},
+    --This may cause issues -> each language should maybe require its own config?
+    ft = {"python", "cpp"},
     opts = function()
       return require "custom.configs.none-ls"
     end,
