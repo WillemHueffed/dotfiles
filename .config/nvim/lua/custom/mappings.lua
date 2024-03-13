@@ -15,6 +15,17 @@ M.dap = {
   }
 }
 
+M.dap_python = {
+  plugin = true,
+  n = {
+    ["<leader>dpr"] = {
+      function()
+        require('dap-python').test_method()
+      end
+    }
+  }
+}
+
 M.crates = {
   plugin = true,
   n = {

@@ -6,6 +6,12 @@ local plugins = {
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        -- Below is all Python
+        "debugpy",
+        "mypy",
+        "ruff-lsp",
+        "black",
+        "pyright",
       },
     },
   },
@@ -15,6 +21,24 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function ()
+        dapui.close()
+      end
+    end
   },
   {
     "mrcjkb/rustaceanvim",
@@ -30,6 +54,19 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings("dap")
     end
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+      require("core.utils").load_mappings("dap_python")
+    end,
   },
   {
     'saecki/crates.nvim',
@@ -70,6 +107,13 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end,
-  }
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    ft = {"python"},
+    opts = function()
+      return require "custom.configs.none-ls"
+    end,
+  },
 }
 return plugins
