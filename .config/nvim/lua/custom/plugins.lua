@@ -20,6 +20,7 @@ local plugins = {
         --js
         "typescript-language-server",
         "eslint-lsp",
+        "eslint_d",
         "js-debug-adapter",
         "prettier",
       },
@@ -140,8 +141,11 @@ local plugins = {
   },
   {
     "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
     --This may cause issues -> each language should maybe require its own config?
-    ft = {"python", "cpp"},
+    ft = {"python", "cpp", "javascript", "typescript"},
     opts = function()
       return require "custom.configs.none-ls"
     end,
