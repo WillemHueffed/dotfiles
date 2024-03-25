@@ -19,6 +19,9 @@ local plugins = {
         "codelldb",
         --js
         "typescript-language-server",
+        "eslint-lsp",
+        "js-debug-adapter",
+        "prettier",
       },
     },
   },
@@ -79,6 +82,7 @@ local plugins = {
     "mfussenegger/nvim-dap",
     init = function()
       require("core.utils").load_mappings("dap")
+      require "custom.configs.dap"
     end
   },
   {
