@@ -17,6 +17,8 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
+        --js
+        "typescript-language-server",
       },
     },
   },
