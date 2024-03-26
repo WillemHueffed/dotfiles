@@ -20,7 +20,7 @@ sudo apt install stow
 
 #### Python Venv
 ```
-"sudo apt install python3-venv
+sudo apt install python3-venv
 ```
 
 ### Node JS
