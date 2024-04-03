@@ -145,3 +145,4 @@ tmux
 export TURTLEBOT3_MODEL=burger
 alias vim=nvim
 . "$HOME/.cargo/env"
+tmux source .config/tmux/tmux.conf
