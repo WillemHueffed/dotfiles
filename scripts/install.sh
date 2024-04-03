@@ -4,7 +4,8 @@ sudo apt install stow
 sudo apt install tmux
 
 # Install tmux package manager
-#git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.configs/tmux/plugs/
+mkdir ~/.config/tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.configs/tmux/plugins/
 # leader (crtl+space) + I -> (re)load env/packages
 
 # Install Node.js v21.x
