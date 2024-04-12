@@ -4,6 +4,7 @@ sudo apt install stow
 sudo apt install tmux
 
 # Install tmux package manager
+# This mkdir is broken need to do it manually....
 mkdir ~/.config/tmux/plugins
 git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.configs/tmux/plugins/
 # leader (crtl+space) + I -> (re)load env/packages
