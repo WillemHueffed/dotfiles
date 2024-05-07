@@ -46,14 +46,6 @@ local plugins = {
     },
   },
   {
-    'chipsenkbeil/distant.nvim', 
-    branch = 'v0.3',
-    lazy = false,
-    config = function()
-        require('distant'):setup()
-    end
-  },
-  {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
@@ -150,6 +142,14 @@ local plugins = {
     opts = function()
       return require "custom.configs.none-ls"
     end,
+  },
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+    case_sensitive = false,
+    vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)'),
+    vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)'),
+    vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)'),
   },
 }
 return plugins
