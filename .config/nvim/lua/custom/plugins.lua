@@ -151,5 +151,13 @@ local plugins = {
     vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)'),
     vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)'),
   },
+  {
+    'chipsenkbeil/distant.nvim', 
+    branch = 'v0.3',
+    lazy = false,
+    config = function()
+        require('distant'):setup()
+    end
+  },
 }
 return plugins
