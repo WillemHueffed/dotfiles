@@ -138,7 +138,7 @@ local plugins = {
       "nvimtools/none-ls-extras.nvim",
     },
     --This may cause issues -> each language should maybe require its own config?
-    ft = {"python", "c", "cpp", "javascript", "typescript"},
+    ft = {"python", "c", "cpp", "javascript", "typescript", "typescriptreact"},
     opts = function()
       return require "custom.configs.none-ls"
     end,
