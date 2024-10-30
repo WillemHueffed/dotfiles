@@ -29,6 +29,12 @@ curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
+### NVIM
+```
+wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
+Run chmod u+x nvim.appimage && ./nvim.appimage
+```
+
 ## Installation
 First, check out the dotfiles repo in your $HOME directory using git
 
